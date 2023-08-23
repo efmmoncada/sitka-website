@@ -25,7 +25,7 @@ export default async function OurServices() {
         {services.map(service => (
           <ServiceBullet
             name={service.name}
-            iconUrl={'http://placekitten.com/100/100'}
+            iconUrl={service.iconUrl}
             description={service.description}
           />
         ))}
