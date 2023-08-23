@@ -19,6 +19,11 @@ const Services: CollectionConfig = {
       label: 'Service Description',
       type: 'text',
     },
+    {
+      name: 'iconUrl',
+      label: 'Icon Image URL',
+      type: 'text',
+    },
   ],
 };
 

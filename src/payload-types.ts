@@ -11,12 +11,15 @@ export interface Config {
     services: Service;
     users: User;
   };
-  globals: {};
+  globals: {
+    info: Info;
+  };
 }
 export interface Service {
   id: string;
   name?: string;
   description?: string;
+  iconUrl?: string;
   updatedAt: string;
   createdAt: string;
 }
@@ -32,4 +35,12 @@ export interface User {
   loginAttempts?: number;
   lockUntil?: string;
   password?: string;
+}
+export interface Info {
+  id: string;
+  BusinessName?: string;
+  phoneNumber?: string;
+  email?: string;
+  updatedAt?: string;
+  createdAt?: string;
 }
