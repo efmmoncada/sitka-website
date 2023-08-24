@@ -7,15 +7,11 @@ export default function Contact() {
     e.preventDefault();
   }
 
-  function handleSubmit(e: Event) {
-    e.preventDefault();
-  }
-
   return (
     <div id="contact">
       <SectionTitle>Contact Us</SectionTitle>
 
-      <form className="flex flex-col items-center">
+      <form action="/api/contact" method="post" className="flex flex-col items-center">
         <div className="mx-auto flex w-1/4 flex-col">
           <label>
             Your Name
@@ -42,11 +38,7 @@ export default function Contact() {
           >
             Clear
           </button>
-          <button
-            onClick={handleSubmit}
-            className="w-20 ml-2 bg-black p-2 text-white inline"
-            type="submit"
-          >
+          <button className="w-20 ml-2 bg-black p-2 text-white inline" type="submit">
             Submit
           </button>
         </div>
