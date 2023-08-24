@@ -1,15 +1,20 @@
 import Image from 'next/image';
+import { type } from 'os';
 
 import logo from '../../../public/logo.png';
 
-export default function Navbar() {
+type Props = {
+  businessName: string;
+};
+
+export default async function Navbar({ businessName }: Props) {
   return (
     <nav className="sticky top-0 flex items-center justify-between bg-white py-1 text-2xl">
       <div className="flex items-center">
         <a href="/">
           <Image className="w-36" src={logo} alt="logo" />
         </a>
-        <a href="/">Sitka Renovations LLC</a>
+        <a href="/">{businessName}</a>
       </div>
       <div className="text-xl">
         <ul className="flex">

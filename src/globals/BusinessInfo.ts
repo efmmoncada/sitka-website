@@ -5,7 +5,7 @@ const BusinessInfo: GlobalConfig = {
   label: 'Business Information',
   fields: [
     {
-      name: 'BusinessName',
+      name: 'businessName',
       type: 'text',
     },
     {

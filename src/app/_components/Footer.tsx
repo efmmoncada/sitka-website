@@ -1,4 +1,8 @@
-export default function Footer() {
+type Props = {
+  businessName: string;
+};
+
+export default function Footer({ businessName }: Props) {
   return (
     <footer className="mt-8 bg-gray-100 p-6 text-center">
       <p className="my-1">
@@ -14,7 +18,7 @@ export default function Footer() {
           Contact Us
         </a>
       </p>
-      <p className="mt-6">&copy; Sitka Renovations LLC</p>
+      <p className="mt-6">&copy; {businessName}</p>
     </footer>
   );
 }
