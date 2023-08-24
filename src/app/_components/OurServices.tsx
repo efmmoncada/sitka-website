@@ -6,10 +6,6 @@ import SectionTitle from './SectionTitle';
 import ServiceBullet from './ServiceBullet';
 
 export default async function OurServices() {
-  // const data = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/test`)
-  //   .then(res => res.json())
-  //   .then(res => res?.docs?.[0]);
-
   const payload = await getPayload();
   const data = await payload.find({
     collection: 'services',
@@ -24,6 +20,7 @@ export default async function OurServices() {
       <div className="mx-40 my-10 grid grid-cols-2 gap-x-60 gap-y-14">
         {services.map(service => (
           <ServiceBullet
+            key={service.id}
             name={service.name}
             iconUrl={service.iconUrl}
             description={service.description}
