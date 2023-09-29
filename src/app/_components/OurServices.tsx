@@ -1,7 +1,4 @@
-import { CollectionAfterChangeHook } from 'payload/types';
-
 import { getPayload } from '../../getPayload';
-import { Service } from '../../payload-types';
 import SectionTitle from './SectionTitle';
 import ServiceBullet from './ServiceBullet';
 
@@ -11,13 +8,13 @@ export default async function OurServices() {
     collection: 'services',
   });
 
-  const services: Service[] = data.docs;
+  const services = data.docs;
 
   return (
-    <div className="my-16 grid place-items-center bg-white pt-8">
+    <div className="py-10 grid place-items-center bg-white">
       <SectionTitle>Our Services</SectionTitle>
 
-      <div className="mx-40 my-10 grid grid-cols-2 gap-x-60 gap-y-14">
+      <div className="mx-40 my-10 grid grid-cols-2 gap-x-44 gap-y-14">
         {services.map(service => (
           <ServiceBullet
             key={service.id}
