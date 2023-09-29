@@ -9,6 +9,8 @@
 export interface Config {
   collections: {
     services: Service;
+    previousWorks: PreviousWork;
+    media: Media;
     users: User;
   };
   globals: {
@@ -22,6 +24,27 @@ export interface Service {
   iconUrl?: string;
   updatedAt: string;
   createdAt: string;
+}
+export interface PreviousWork {
+  id: string;
+  service?: string;
+  media?: {
+    image: string | Media;
+    id?: string;
+  }[];
+  updatedAt: string;
+  createdAt: string;
+}
+export interface Media {
+  id: string;
+  updatedAt: string;
+  createdAt: string;
+  url?: string;
+  filename?: string;
+  mimeType?: string;
+  filesize?: number;
+  width?: number;
+  height?: number;
 }
 export interface User {
   id: string;
@@ -38,7 +61,7 @@ export interface User {
 }
 export interface Info {
   id: string;
-  BusinessName?: string;
+  businessName?: string;
   phoneNumber?: string;
   email?: string;
   updatedAt?: string;
