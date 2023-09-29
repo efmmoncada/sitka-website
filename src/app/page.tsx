@@ -7,15 +7,9 @@ import OurServices from './_components/OurServices';
 import Title from './_components/Title';
 
 export default async function Home() {
-  const home = true;
-  if (!home) {
-    return notFound();
-  }
-
   return (
     <Fragment>
       <Title />
-      {/* <TitleWithImage /> */}
       <OurServices />
       <Contact />
       <About />
