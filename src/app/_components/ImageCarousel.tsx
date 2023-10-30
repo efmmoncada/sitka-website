@@ -14,27 +14,37 @@ type Props = { images: Media[] };
 
 export default function ImageCarousel({ images }: Props) {
   return (
-    <Swiper
-      style={{
-        paddingBottom: '4rem',
-      }}
-      slidesPerView={3}
-      spaceBetween={20}
-      modules={[Pagination, Navigation]}
-      navigation={true}
-      pagination={{ clickable: true }}
-    >
-      {images.map((img, i) => (
-        <SwiperSlide key={i}>
-          <Image
-            src={img.url}
-            width={img.width}
-            height={img.height}
-            alt=""
-            className="rounded-md shadow-2xl"
-          />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <>
+      <style>
+        {`
+          :root {
+            --swiper-theme-color: #d51d25
+          }
+        `}
+      </style>
+      <Swiper
+        style={{
+          paddingBottom: '4rem',
+        }}
+
+        slidesPerView={3}
+        spaceBetween={20}
+        modules={[Pagination, Navigation]}
+        navigation={true}
+        pagination={{ clickable: true }}
+      >
+        {images.map((img, i) => (
+          <SwiperSlide key={i}>
+            <Image
+              src={img.url}
+              width={img.width}
+              height={img.height}
+              alt=""
+              className="rounded-md shadow-2xl"
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </>
   );
 }

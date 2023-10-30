@@ -11,10 +11,10 @@ export default async function OurServices() {
   const services = data.docs;
 
   return (
-    <div className="grid place-items-center bg-white py-10">
+    <div className="bg-white py-10 flex flex-col items-center">
       <SectionTitle>Our Services</SectionTitle>
 
-      <div className="mx-40 my-10 grid grid-cols-2 gap-x-44 gap-y-14">
+      <div className="py-10 grid grid-cols-1 lg:grid-cols-2 xl:gap-x-36 gap-y-14 w-fit">
         {services.map(service => (
           <ServiceBullet
             key={service.id}

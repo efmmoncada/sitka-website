@@ -22,7 +22,7 @@ export default async function InfoBar() {
   });
 
   return (
-    <div className="flex flex-col items-center gap-1 bg-[#d51d25] py-7 text-xl text-white md:flex-row md:justify-between md:px-14">
+    <div className="flex flex-col items-center gap-1 bg-[#d51d25] py-7 text-xl text-white md:flex-row md:justify-between md:px-14 lg:px-20">
       <span>
         <a href={`tel:${phoneNumber}`}>
           <h4 className="inline text-2xl">{formatPhoneNumber(phoneNumber)}</h4>

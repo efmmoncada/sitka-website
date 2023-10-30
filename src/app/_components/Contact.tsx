@@ -30,11 +30,11 @@ export default function Contact() {
   }
 
   return (
-    <div id="contact">
+    <div id="contact" className='scroll-mt-28'>
       <SectionTitle>Contact Us</SectionTitle>
 
       <form ref={form} onSubmit={sendEmail} className="flex flex-col items-center">
-        <div className="mx-auto flex w-1/4 flex-col font-serif">
+        <div className="mx-auto flex px-4 flex-col font-serif">
           <label>
             Your Name
             <input
