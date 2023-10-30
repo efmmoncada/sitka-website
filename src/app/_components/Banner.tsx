@@ -1,6 +1,5 @@
 import { getPayload } from '../../getPayload';
 
-
 export default async function Banner() {
   const payload = await getPayload();
   const { businessName } = await payload.findGlobal({
@@ -16,7 +15,7 @@ export default async function Banner() {
         backgroundPositionY: '55%',
       }}
     >
-      <div className="absolute inset-0 h-full w-full overflow-hidden bg-fixed bg-black/40">
+      <div className="absolute inset-0 h-full w-full overflow-hidden bg-black/40 bg-fixed">
         <div className="flex h-full items-center justify-center">
           <div className="text-white">
             <h2 className="pb-8 text-7xl font-semibold">{businessName}</h2>

@@ -27,7 +27,6 @@ export default function Contact() {
     } catch (e: unknown) {
       console.log(e);
     }
-
   }
 
   return (
@@ -74,12 +73,12 @@ export default function Contact() {
         <div className="flex flex-row">
           <button
             onClick={handleClear}
-            className="w-20 mr-2 border-2 border-black bg-white p-2 inline hover:scale-105 hover:shadow-md"
+            className="mr-2 inline w-20 border-2 border-black bg-white p-2 hover:scale-105 hover:shadow-md"
           >
             Clear
           </button>
           <button
-            className="w-20 ml-2 bg-black p-2 text-white inline hover:scale-105 hover:shadow-md"
+            className="ml-2 inline w-20 bg-black p-2 text-white hover:scale-105 hover:shadow-md"
             type="submit"
           >
             Submit

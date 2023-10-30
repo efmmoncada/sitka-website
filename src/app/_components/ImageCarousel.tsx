@@ -8,7 +8,7 @@ import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import "swiper/css/effect-coverflow";
+import 'swiper/css/effect-coverflow';
 
 type Props = { images: Media[] };
 
@@ -16,13 +16,13 @@ export default function ImageCarousel({ images }: Props) {
   return (
     <Swiper
       style={{
-        paddingBottom: "4rem"
+        paddingBottom: '4rem',
       }}
       slidesPerView={3}
       spaceBetween={20}
       modules={[Pagination, Navigation]}
       navigation={true}
-      pagination={{ clickable: true}}
+      pagination={{ clickable: true }}
     >
       {images.map((img, i) => (
         <SwiperSlide key={i}>
@@ -31,7 +31,7 @@ export default function ImageCarousel({ images }: Props) {
             width={img.width}
             height={img.height}
             alt=""
-            className="shadow-2xl rounded-md"
+            className="rounded-md shadow-2xl"
           />
         </SwiperSlide>
       ))}

@@ -11,7 +11,7 @@ export default async function OurServices() {
   const services = data.docs;
 
   return (
-    <div className="py-10 grid place-items-center bg-white">
+    <div className="grid place-items-center bg-white py-10">
       <SectionTitle>Our Services</SectionTitle>
 
       <div className="mx-40 my-10 grid grid-cols-2 gap-x-44 gap-y-14">

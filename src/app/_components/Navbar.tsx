@@ -9,7 +9,7 @@ type Props = {
 
 export default async function Navbar({ businessName }: Props) {
   return (
-    <nav className="sticky top-0 flex items-center justify-between bg-white py-4 font-serif text-2xl z-10">
+    <nav className="sticky top-0 z-10 flex items-center justify-between bg-white py-4 font-serif text-2xl">
       <div className="flex items-center">
         <a href="/">
           <Image className="w-36" src={logo} alt="logo" />
