@@ -1,31 +1,78 @@
+'use client';
 import Image from 'next/image';
-import { type } from 'os';
 
 import logo from '../../../public/logo.png';
+import useScreeSize from '../../hooks/useScreenSize';
+import { FaBars } from 'react-icons/fa6';
+import { useRef, useState } from 'react';
 
 type Props = {
   businessName: string;
 };
 
-export default async function Navbar({ businessName }: Props) {
+export default function Navbar({ businessName }: Props) {
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const navRef = useRef<HTMLElement>();
+  const { width, height } = useScreeSize();
+
+  function toggleMobileMenu() {
+    setShowMobileMenu(prev => !prev);
+  }
+
   return (
-    <nav className="sticky top-0 z-10 flex items-center justify-between bg-white py-4 font-serif text-2xl">
+    <nav
+      ref={navRef}
+      className="sticky top-0 z-10 flex items-center justify-between bg-white py-4 font-serif text-2xl"
+    >
       <div className="flex items-center">
         <a href="/">
           <Image className="w-36" src={logo} alt="logo" />
         </a>
         <a href="/">{businessName}</a>
       </div>
-      <div className="text-xl">
-        <ul className="flex">
-          <li className="mx-6">
-            <a href="/showcase">Showcase</a>
-          </li>
-          <li className="mx-6">
-            <a href="/#contact">Contact Us</a>
-          </li>
-        </ul>
+      <div className="text-center text-xl">
+        {width > 680 ? (
+          <NavStructure ulClassNames="flex" liClassNames="mx-6" />
+        ) : (
+          <button onClick={toggleMobileMenu} className="mr-3">
+            <FaBars />
+            <div className={`absolute bg-white`}></div>
+          </button>
+        )}
       </div>
+      {showMobileMenu && (
+        <NavStructure
+          ulClassNames={`absolute bg-white w-full pb-4 `}
+          liClassNames="text-lg pl-4 text-center"
+          offset={navRef.current.offsetHeight}
+        />
+      )}
     </nav>
+  );
+}
+
+function NavStructure({
+  ulClassNames,
+  liClassNames,
+  offset = 0,
+}: {
+  ulClassNames: string;
+  liClassNames: string;
+  offset?: number;
+}) {
+  return (
+    <ul
+      className={ulClassNames}
+      style={{
+        top: `${offset}px`,
+      }}
+    >
+      <li className={liClassNames}>
+        <a href="/showcase">Showcase</a>
+      </li>
+      <li className={liClassNames}>
+        <a href="/#contact">Contact Us</a>
+      </li>
+    </ul>
   );
 }

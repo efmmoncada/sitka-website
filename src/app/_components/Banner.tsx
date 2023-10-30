@@ -18,7 +18,7 @@ export default async function Banner() {
       <div className="absolute inset-0 h-full w-full overflow-hidden bg-black/40 bg-fixed">
         <div className="flex h-full items-center justify-center">
           <div className="text-white">
-            <h2 className="pb-8 text-4xl sm:text-5xl px-2 lg:text-7xl font-semibold">{businessName}</h2>
+            <h2 className="text-4xl sm:text-5xl px-2 lg:text-7xl font-semibold">{businessName}</h2>
           </div>
         </div>
       </div>
