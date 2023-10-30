@@ -1,21 +1,40 @@
 'use client';
 import Image from 'next/image';
 import { Media } from 'payload/generated-types';
+import { FaArrowLeft } from 'react-icons/fa6';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import "swiper/css/effect-coverflow";
 
 type Props = { images: Media[] };
 
 export default function ImageCarousel({ images }: Props) {
   return (
-    <div className="grid w-4/5 mx-auto grid-flow-col auto-cols-[30%] overflow-x-auto gap-4">
-      {images.map(img => (
-        <Image
-          className="shadow-2xl rounded-md"
-          src={img.url}
-          alt=""
-          width={img.width}
-          height={img.height}
-        />
+    <Swiper
+      style={{
+        paddingBottom: "4rem"
+      }}
+      slidesPerView={3}
+      spaceBetween={20}
+      modules={[Pagination, Navigation]}
+      navigation={true}
+      pagination={{ clickable: true}}
+    >
+      {images.map((img, i) => (
+        <SwiperSlide key={i}>
+          <Image
+            src={img.url}
+            width={img.width}
+            height={img.height}
+            alt=""
+            className="shadow-2xl rounded-md"
+          />
+        </SwiperSlide>
       ))}
-    </div>
+    </Swiper>
   );
 }

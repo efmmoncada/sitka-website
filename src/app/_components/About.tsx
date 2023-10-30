@@ -1,6 +1,14 @@
 import SectionTitle from './SectionTitle';
+import { FaSquareFacebook, FaInstagram } from 'react-icons/fa6';
+import SocialIcon from './SocialIcon';
+import { getPayload } from '../../getPayload';
 
-export default function About() {
+export default async function About() {
+  const payload = await getPayload();
+  const { facebookUrl, instagramUrl } = await payload.findGlobal({
+    slug: 'info',
+  });
+
   return (
     <div className="my-16 grid place-items-center bg-white pt-8">
       <SectionTitle>About Us</SectionTitle>
@@ -15,6 +23,14 @@ export default function About() {
           illo nulla rerum, a eaque. Cupiditate provident deserunt non. Sed omnis asperiores harum
           optio vel autem excepturi.
         </p>
+      </div>
+      <div className="flex gap-3 py-9">
+        <SocialIcon url={facebookUrl}>
+          <FaSquareFacebook size={30} />
+        </SocialIcon>
+        <SocialIcon url={instagramUrl}>
+          <FaInstagram size={30} />
+        </SocialIcon>
       </div>
     </div>
   );

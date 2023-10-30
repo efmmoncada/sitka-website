@@ -22,20 +22,20 @@ export default async function InfoBar() {
   });
 
   return (
-    <div className="bg-[#d51d25] flex text-white text-xl px-72 py-7 justify-between">
+    <div className="flex flex-col items-center gap-1 bg-[#d51d25] py-7 text-xl text-white md:flex-row md:justify-between md:px-14">
       <span>
         <a href={`tel:${phoneNumber}`}>
-          <h4 className="pb-6 inline px-9 text-2xl underline underline-offset-2">
-            {formatPhoneNumber(phoneNumber)}
-          </h4>
+          <h4 className="inline text-2xl">{formatPhoneNumber(phoneNumber)}</h4>
         </a>
       </span>
       <span>
         <a href={`mailto:${email}`}>
-          <h4 className="pb-6 inline px-9 text-2xl underline underline-offset-2">{email}</h4>
+          <h4 className="inline text-2xl">{email}</h4>
         </a>
       </span>
-      <span>CCB #{licenseNumber}</span>
+      <span>
+        <h4 className="inline text-2xl">CCB #{licenseNumber}</h4>
+      </span>
     </div>
   );
 }
