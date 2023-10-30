@@ -23,6 +23,21 @@ const BusinessInfo: GlobalConfig = {
       label: 'Email',
       type: 'email',
     },
+    {
+      name: 'licenseNumber',
+      label: 'License Number',
+      type: 'text',
+    },
+    {
+      name: 'facebookUrl',
+      label: 'Facebook Link',
+      type: 'text',
+    },
+    {
+      name: 'instagramUrl',
+      label: 'Instagram Link',
+      type: 'text',
+    },
   ],
 };
 

@@ -64,6 +64,9 @@ export interface Info {
   businessName?: string;
   phoneNumber?: string;
   email?: string;
+  licenseNumber?: string;
+  facebookUrl?: string;
+  instagramUrl?: string;
   updatedAt?: string;
   createdAt?: string;
 }

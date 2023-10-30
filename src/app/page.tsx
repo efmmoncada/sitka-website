@@ -1,15 +1,16 @@
 import React, { Fragment } from 'react';
-import { notFound } from 'next/navigation';
 
 import About from './_components/About';
 import Contact from './_components/Contact';
 import OurServices from './_components/OurServices';
-import Title from './_components/Title';
+import Banner from './_components/Banner';
+import InfoBar from './_components/InfoBar';
 
 export default async function Home() {
   return (
     <Fragment>
-      <Title />
+      <Banner />
+      <InfoBar />
       <OurServices />
       <Contact />
       <About />
