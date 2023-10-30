@@ -30,11 +30,11 @@ export default function Contact() {
   }
 
   return (
-    <div id="contact" className='scroll-mt-28'>
+    <div id="contact" className="scroll-mt-28">
       <SectionTitle>Contact Us</SectionTitle>
 
       <form ref={form} onSubmit={sendEmail} className="flex flex-col items-center">
-        <div className="mx-auto flex px-4 flex-col font-serif">
+        <div className="mx-auto flex flex-col px-4 font-serif">
           <label>
             Your Name
             <input
@@ -70,15 +70,15 @@ export default function Contact() {
           </label>
         </div>
 
-        <div className="flex flex-row">
+        <div className="flex flex-row gap-4">
           <button
             onClick={handleClear}
-            className="mr-2 inline w-20 border-2 border-black bg-white p-2 hover:scale-105 hover:shadow-md"
+            className="w-20 bg-black text-white p-2 hover:scale-105 hover:shadow-md"
           >
             Clear
           </button>
           <button
-            className="ml-2 inline w-20 bg-black p-2 text-white hover:scale-105 hover:shadow-md"
+            className="w-20 bg-[#d51d25] p-2 text-white hover:scale-105 hover:shadow-md"
             type="submit"
           >
             Submit
