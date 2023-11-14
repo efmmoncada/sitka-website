@@ -13,7 +13,7 @@ type Props = {
 export default function Navbar({ businessName }: Props) {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const navRef = useRef<HTMLElement>();
-  const { width, height } = useScreeSize();
+  const { width } = useScreeSize();
 
   function toggleMobileMenu() {
     setShowMobileMenu(prev => !prev);
@@ -24,7 +24,7 @@ export default function Navbar({ businessName }: Props) {
       ref={navRef}
       className="sticky top-0 z-10 flex items-center justify-between bg-white py-4 font-serif text-2xl"
     >
-      <div className="flex items-center">
+      <div className="flex items-center text-lg sm:text-2xl lg:text-3xl">
         <a href="/">
           <Image className="w-36" src={logo} alt="logo" />
         </a>

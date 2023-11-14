@@ -9,25 +9,23 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
+import useScreeSize from '../../hooks/useScreenSize';
 
 type Props = { images: Media[] };
 
 export default function ImageCarousel({ images }: Props) {
+  const { width } = useScreeSize();
   return (
     <>
       <style>
         {`
           :root {
-            --swiper-theme-color: #d51d25
+            --swiper-theme-color: #d51d25;
           }
         `}
       </style>
       <Swiper
-        style={{
-          paddingBottom: '4rem',
-        }}
-
-        slidesPerView={3}
+        slidesPerView={width > 680 ? 3 : 1}
         spaceBetween={20}
         modules={[Pagination, Navigation]}
         navigation={true}
