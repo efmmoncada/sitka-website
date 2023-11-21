@@ -9,10 +9,14 @@ import InfoBar from './_components/InfoBar';
 export default async function Home() {
   return (
     <Fragment>
+      {/* @ts-expect-error Server Component */}
       <Banner />
+      {/* @ts-expect-error Server Component */}
       <InfoBar />
+      {/* @ts-expect-error Server Component */}
       <OurServices />
       <Contact />
+      {/* @ts-expect-error Server Component */}
       <About />
     </Fragment>
   );
