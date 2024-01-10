@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Noto Serif Display';
+    src:
+      local('Noto Serif Display'),
+      url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,200;0,300;0,400;0,700;1,300&display=swap');
+  }
+
+  body {
+    font-family: 'Noto Serif Display', serif;
+  }
+
+}
