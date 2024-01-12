@@ -35,9 +35,9 @@ export default function ImageCarousel({ images }: Props) {
         {images.map((img, i) => (
           <SwiperSlide key={i}>
             <Image
-              src={img.url}
-              width={img.width}
-              height={img.height}
+              src={img.url || ''}
+              width={img.width || 0}
+              height={img.height || 0}
               alt=""
               className="rounded-md shadow-2xl"
             />
