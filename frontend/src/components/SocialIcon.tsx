@@ -6,7 +6,11 @@ type Props = PropsWithChildren<{
 
 export default function SocialIcon({ children, url }: Props) {
   return (
-    <a href={url} target="_blank" className="no-underline absolute bottom-4 right-4">
+    <a
+      href={url}
+      target="_blank"
+      className="no-underline absolute bottom-4 right-4"
+    >
       {children}
     </a>
   );

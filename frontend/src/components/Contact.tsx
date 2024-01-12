@@ -17,11 +17,6 @@ export default function Contact() {
 
   async function sendEmail(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-
-    const serviceId = "contact_sitka";
-    const templateId = "template_m52bspz";
-    const publicKey = "hE_yJy9PhZslsoJhL";
-
     try {
       if (!form.current) throw new Error("Form is not defined");
       if (

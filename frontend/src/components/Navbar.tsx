@@ -5,7 +5,7 @@ import logo from "../../public/logo.png";
 import { FaBars } from "react-icons/fa6";
 import { useRef, useState } from "react";
 import useScreeSize from "@/hooks/useScreenSize";
-import { BusinessInfo } from "../../../types/payload-types";
+import { BusinessInfo } from "@payload-types/payload-types";
 
 type Props = Pick<BusinessInfo, "businessName">;
 

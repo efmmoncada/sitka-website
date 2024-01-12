@@ -1,4 +1,4 @@
-import { Media, Service } from "../../../types/payload-types";
+import { Media, Service } from "@payload-types/payload-types";
 import SectionTitle from "./SectionTitle";
 import ServiceBullet from "./ServiceBullet";
 
@@ -17,7 +17,7 @@ export default function OurServices({ services }: Props) {
           <ServiceBullet
             key={service.id}
             name={service.name}
-            icon={service.icon || ''}
+            icon={service.icon || ""}
             description={service.description}
           />
         ))}

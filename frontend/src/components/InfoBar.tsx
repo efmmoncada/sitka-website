@@ -1,4 +1,4 @@
-import { BusinessInfo } from "../../../types/payload-types";
+import { BusinessInfo } from "@payload-types/payload-types";
 
 function formatPhoneNumber(phoneNum: string): string {
   const countryCode = phoneNum.slice(0, phoneNum.length - 10);

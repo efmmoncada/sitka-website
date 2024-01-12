@@ -1,5 +1,5 @@
 import ShowcaseBlock from "@/components/ShowcaseBlock";
-import { Media, PreviousWork } from "../../../../types/payload-types";
+import { Media, PreviousWork } from "@payload-types/payload-types";
 import fetchFromPayload from "@/utils/fetchFromPayload";
 
 export default async function Showcase() {

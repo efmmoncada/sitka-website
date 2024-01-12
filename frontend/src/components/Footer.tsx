@@ -1,4 +1,4 @@
-import { BusinessInfo } from "../../../types/payload-types";
+import { BusinessInfo } from "@payload-types/payload-types";
 
 type Props = Pick<BusinessInfo, "businessName">;
 

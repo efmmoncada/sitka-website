@@ -1,5 +1,5 @@
 import { FaSquareFacebook } from "react-icons/fa6";
-import { BusinessInfo, Media } from "../../../types/payload-types";
+import { BusinessInfo, Media } from "@payload-types/payload-types";
 import SectionTitle from "./SectionTitle";
 import SocialIcon from "./SocialIcon";
 import Image from "next/image";

@@ -1,6 +1,6 @@
 import Banner from "@/components/Banner";
 import InfoBar from "@/components/InfoBar";
-import { BusinessInfo, Service } from "../../../types/payload-types";
+import { BusinessInfo, Service } from "@payload-types/payload-types";
 import OurServices from "@/components/OurServices";
 import About from "@/components/About";
 import dynamic from "next/dynamic";
@@ -19,9 +19,8 @@ export default async function Home() {
     licenseNumber,
     aboutContent,
     aboutImage,
-    facebookUrl
+    facebookUrl,
   } = businessInfo;
-
 
   const services = await fetchFromPayload<{ docs: Service[] }>("/api/services");
 
@@ -35,7 +34,11 @@ export default async function Home() {
       />
       <OurServices services={services.docs} />
       <Contact />
-      <About aboutContent={aboutContent} aboutImage={aboutImage} facebookUrl={facebookUrl}/>
+      <About
+        aboutContent={aboutContent}
+        aboutImage={aboutImage}
+        facebookUrl={facebookUrl}
+      />
     </>
   );
 }

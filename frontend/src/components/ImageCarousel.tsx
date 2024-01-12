@@ -2,13 +2,13 @@
 import Image from "next/image";
 import { FaArrowLeft } from "react-icons/fa6";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, EffectCoverflow } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
-import { Media } from "../../../types/payload-types";
+import { Media } from "@payload-types/payload-types";
 import useScreeSize from "@/hooks/useScreenSize";
 
 type Props = { images?: Media[] };

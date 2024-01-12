@@ -3,8 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import dynamic from "next/dynamic";
-import fetchFromPayload from '@/utils/fetchFromPayload';
-import { BusinessInfo } from '../../../types/payload-types';
+import fetchFromPayload from "@/utils/fetchFromPayload";
+import { BusinessInfo } from "@payload-types/payload-types";
 const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: false });
 
 const inter = Inter({ subsets: ["latin"] });

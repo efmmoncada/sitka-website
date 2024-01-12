@@ -1,6 +1,5 @@
-import { Media } from '../../../types/payload-types';
-import ImageCarousel from './ImageCarousel';
-
+import { Media } from "@payload-types/payload-types";
+import ImageCarousel from "./ImageCarousel";
 
 type Props = {
   images?: Media[];
