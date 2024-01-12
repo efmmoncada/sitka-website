@@ -5,7 +5,7 @@ import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { webpackBundler } from "@payloadcms/bundler-webpack";
 import { slateEditor } from "@payloadcms/richtext-slate";
 import { buildConfig } from "payload/config";
-// import { Config } from "../../types/payload-types";
+import { Config } from "./payload-types";
 
 import Users from "./collections/Users";
 import Services from "./collections/Services";
@@ -28,7 +28,7 @@ export default buildConfig({
       __dirname,
       "payload-types.ts"
     ),
-    // declare: false,
+    declare: false,
   },
   graphQL: {
     schemaOutputFile: path.resolve(__dirname, "generated-schema.graphql"),
@@ -49,6 +49,6 @@ export default buildConfig({
   }),
 });
 
-// declare module "payload" {
-//   export interface GeneratedTypes extends Config {}
-// }
+declare module "payload" {
+  export interface GeneratedTypes extends Config {}
+}
