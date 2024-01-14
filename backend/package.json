@@ -1,6 +1,6 @@
 {
-  "name": "backend",
-  "description": "A blank template to get started with Payload",
+  "name": "sitka-cms",
+  "description": "A CMS to power the Sitka Renovations' Website",
   "version": "1.0.0",
   "main": "dist/server.js",
   "license": "MIT",
