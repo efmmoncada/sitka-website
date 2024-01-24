@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import dynamic from "next/dynamic";
 import fetchFromPayload from "@/utils/fetchFromPayload";
 import { BusinessInfo } from "@payload-types/payload-types";
+import { Providers } from "./providers";
 const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: false });
 
 const inter = Inter({ subsets: ["latin"] });
@@ -41,9 +42,11 @@ export default async function RootLayout({
         />
       </head>
       <body>
-        <Navbar businessName={businessName} />
-        {children}
-        <Footer businessName={businessName} />
+        <Providers>
+          <Navbar businessName={businessName} />
+          {children}
+          <Footer businessName={businessName} />
+        </Providers>
       </body>
     </html>
   );

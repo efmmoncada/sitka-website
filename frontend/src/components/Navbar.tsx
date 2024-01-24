@@ -1,77 +1,79 @@
 "use client";
 import Image from "next/image";
-
-import logo from "../../public/logo.png";
-import { FaBars } from "react-icons/fa6";
-import { useRef, useState } from "react";
-import useScreeSize from "@/hooks/useScreenSize";
+import { useState } from "react";
 import { BusinessInfo } from "@payload-types/payload-types";
+import {
+  Link,
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  NavbarMenu,
+  NavbarMenuItem,
+  NavbarMenuToggle,
+} from "@nextui-org/react";
+import logo from "../../public/logo.png";
 
 type Props = Pick<BusinessInfo, "businessName">;
 
-export default function Navbar({ businessName }: Props) {
-  const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const navRef = useRef<HTMLElement>(document.createElement("nav"));
-  const { width } = useScreeSize();
+export default function Nav({ businessName }: Props) {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  function toggleMobileMenu() {
-    setShowMobileMenu((prev) => !prev);
-  }
+  const MenuItems = [
+    { title: "Showcase", href: "/showcase" },
+    { title: "Contact Us", href: "#contact" },
+  ];
 
   return (
-    <nav
-      ref={navRef}
-      className="sticky top-0 z-10 flex items-center justify-between bg-white py-4 font-serif text-2xl"
-    >
-      <div className="flex items-center text-lg sm:text-2xl lg:text-3xl">
-        <a href="/">
-          <Image className="w-36" src={logo} alt="logo" />
-        </a>
-        <a href="/">{businessName}</a>
-      </div>
-      <div className="text-center text-xl">
-        {width > 680 ? (
-          <NavStructure ulClassNames="flex" liClassNames="mx-6" />
-        ) : (
-          <button onClick={toggleMobileMenu} className="mr-3">
-            <FaBars />
-            <div className={`absolute bg-white`}></div>
-          </button>
-        )}
-      </div>
-      {showMobileMenu && (
-        <NavStructure
-          ulClassNames={`absolute bg-white w-full pb-4 `}
-          liClassNames="text-lg pl-4 text-center"
-          offset={navRef.current.offsetHeight}
-        />
-      )}
-    </nav>
-  );
-}
-
-function NavStructure({
-  ulClassNames,
-  liClassNames,
-  offset = 0,
-}: {
-  ulClassNames: string;
-  liClassNames: string;
-  offset?: number;
-}) {
-  return (
-    <ul
-      className={ulClassNames}
-      style={{
-        top: `${offset}px`,
+    <Navbar
+      classNames={{
+        wrapper: "justify-end",
+        brand: "justify-self-start",
+        menu: "!h-min p-3",
       }}
+      onMenuOpenChange={setIsMobileMenuOpen}
+      maxWidth="2xl"
+      isBordered={true}
+      isMenuOpen={isMobileMenuOpen}
     >
-      <li className={liClassNames}>
-        <a href="/showcase">Showcase</a>
-      </li>
-      <li className={liClassNames}>
-        <a href="/#contact">Contact Us</a>
-      </li>
-    </ul>
+      <NavbarContent>
+        <NavbarBrand>
+          <a href="/" className="inline text-xl sm:text-2xl">
+            <Image className="inline w-36" src={logo} alt="logo" />
+          </a>
+        </NavbarBrand>
+      </NavbarContent>
+      <NavbarContent justify="center">
+        <a href="/" className="inline text-xl sm:text-2xl">
+          {businessName}
+        </a>
+      </NavbarContent>
+      <NavbarContent justify="end" className="hidden sm:flex">
+        <NavbarItem>
+          <Link className="text-black text-xl" href="/showcase">
+            Showcase
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link className="text-black text-xl" href="#contact">
+            Contact Us
+          </Link>
+        </NavbarItem>
+      </NavbarContent>
+      <NavbarContent justify="end" className="sm:hidden">
+        <NavbarMenuToggle
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+        />
+      </NavbarContent>
+      <NavbarMenu>
+        {MenuItems.map(({ title, href }, i) => (
+          <NavbarMenuItem key={i}>
+            <Link className="text-black text-lg" href={href}>
+              {title}
+            </Link>
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
+    </Navbar>
   );
 }
