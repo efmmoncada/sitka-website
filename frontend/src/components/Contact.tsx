@@ -1,14 +1,26 @@
 "use client";
 
-import { FormEvent, MouseEvent, useRef, useState } from "react";
+import { FormEvent, MouseEvent, useMemo, useRef, useState } from "react";
 
 import SectionTitle from "./SectionTitle";
 import emailjs from "@emailjs/browser";
 import { FaCircleCheck } from "react-icons/fa6";
+import { Button, Input, Textarea, Tooltip } from "@nextui-org/react";
 
 export default function Contact() {
   const form = useRef<HTMLFormElement>(document.createElement("form"));
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
   const [submitted, setSubmitted] = useState(false);
+
+  const validateEmail = (value: string) =>
+    value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i);
+
+  const isEmailInvalid = useMemo(() => {
+    if (email === "") return false;
+    return validateEmail(email) ? false : true;
+  }, [email]);
 
   function handleClear(e: MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
@@ -51,61 +63,59 @@ export default function Contact() {
         <form
           ref={form}
           onSubmit={sendEmail}
-          className="flex flex-col items-center"
+          className="flex flex-col items-center gap-4"
         >
-          <div className="mx-auto flex flex-col px-4 font-serif">
-            <label>
-              Your Name
-              <input
-                className="my-4 block w-full border-2"
-                type="text"
-                autoComplete="name"
-                required
-                name="name"
-              />
-            </label>
-            <label>
-              Email
-              <input
-                className="my-4 block w-full border-2"
-                type="email"
-                autoComplete="email"
-                required
-                name="email"
-              />
-            </label>
-            <label>
-              Phone Number
-              <input
-                className="my-4 block w-full border-2"
-                type="tel"
-                autoComplete="tel"
-                name="phoneNumber"
-              />
-            </label>
-            <label>
-              Description of the work you&apos;re interested in having done
-              <textarea
-                className="my-4 block w-full border-2"
-                rows={8}
-                name="description"
-              />
-            </label>
-          </div>
-
+          <Input
+            type="text"
+            label="Your Name"
+            variant="bordered"
+            value={name}
+            onValueChange={setName}
+            required
+            isRequired
+            // errorMessage="Please enter a valid email"
+            className="max-w-sm"
+          />
+          <Input
+            type="email"
+            label="Your Email"
+            autoComplete="email"
+            variant="bordered"
+            required
+            isRequired
+            isInvalid={isEmailInvalid}
+            errorMessage={isEmailInvalid && "Please enter a valid email"}
+            validationBehavior="native"
+            onValueChange={setEmail}
+            className="max-w-sm"
+          />
+          <Input
+            type="tel"
+            autoComplete="tel"
+            variant="bordered"
+            label="Phone Number"
+            className="max-w-sm"
+          />
+          <Textarea
+            variant="bordered"
+            label="Description of the work you are interested in having done"
+            rows={8}
+            className="max-w-sm"
+          />
           <div className="flex flex-row gap-4">
-            <button
-              onClick={handleClear}
-              className="w-20 bg-black p-2 text-white hover:scale-105 hover:shadow-md"
+            <Button onClick={handleClear}>Clear</Button>
+            <Tooltip
+              isDisabled={name !== "" && email !== ""}
+              content="Please fill out all required fields"
             >
-              Clear
-            </button>
-            <button
-              className="w-20 bg-[#d51d25] p-2 text-white hover:scale-105 hover:shadow-md"
-              type="submit"
-            >
-              Submit
-            </button>
+              <Button
+                isDisabled={name === "" || email === ""}
+                color="primary"
+                type="submit"
+              >
+                Submit
+              </Button>
+            </Tooltip>
           </div>
         </form>
       )}
