@@ -55,7 +55,7 @@ export default function Nav({ businessName }: Props) {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link className="text-black text-xl" href="#contact">
+          <Link className="text-black text-xl" href="/#contact">
             Contact Us
           </Link>
         </NavbarItem>

@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { FaArrowLeft } from "react-icons/fa6";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 
@@ -32,17 +31,22 @@ export default function ImageCarousel({ images }: Props) {
         navigation={true}
         pagination={{ clickable: true }}
       >
-        {images.map((img, i) => (
-          <SwiperSlide key={i}>
-            <Image
-              src={img.url || ''}
-              width={img.width || 0}
-              height={img.height || 0}
-              alt=""
-              className="rounded-md shadow-2xl"
-            />
-          </SwiperSlide>
-        ))}
+        {images
+          .filter((img) => img.url)
+          .map((img, i) =>
+            img.width ? (
+              <SwiperSlide key={i}>
+                <Image
+                  src={img.url || ""}
+                  width={Math.min(img.width, 300)}
+                  height={img.height || 0}
+                  alt=""
+                  className="rounded-md shadow-2xl"
+                />
+              </SwiperSlide>
+            ) : null
+          )
+          .filter((v) => v !== null)}
       </Swiper>
     </>
   );
