@@ -2,7 +2,7 @@ type Props = {
   text: string;
 };
 
-export default function Banner({text}: Props) {
+export default function Banner({ text }: Props) {
   return (
     <div
       className="relative overflow-hidden bg-cover bg-no-repeat p-12 text-center"
