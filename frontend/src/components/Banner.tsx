@@ -15,7 +15,7 @@ export default function Banner({ text }: Props) {
       <div className="absolute inset-0 h-full w-full overflow-hidden bg-black/40 bg-fixed">
         <div className="flex h-full items-center justify-center">
           <div className="text-white">
-            <h2 className="text-4xl sm:text-5xl px-2 lg:text-7xl font-semibold">
+            <h2 className="px-2 text-4xl font-semibold sm:text-5xl lg:text-7xl">
               {text}
             </h2>
           </div>

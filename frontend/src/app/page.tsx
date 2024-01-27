@@ -9,7 +9,7 @@ const Contact = dynamic(() => import("@/components/Contact"), { ssr: false });
 
 export default async function Home() {
   const businessInfo = await fetchFromPayload<BusinessInfo>(
-    "/api/globals/business_info"
+    "/api/globals/business_info",
   );
 
   const {

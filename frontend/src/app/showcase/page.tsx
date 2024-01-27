@@ -4,7 +4,7 @@ import fetchFromPayload from "@/utils/fetchFromPayload";
 
 export default async function Showcase() {
   const previousWorks = await fetchFromPayload<{ docs: PreviousWork[] }>(
-    "/api/previousWorks"
+    "/api/previousWorks",
   );
 
   return (

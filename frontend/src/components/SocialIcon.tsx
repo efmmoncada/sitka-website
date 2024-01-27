@@ -9,7 +9,7 @@ export default function SocialIcon({ children, url }: Props) {
     <a
       href={url}
       target="_blank"
-      className="no-underline absolute bottom-4 right-4"
+      className="absolute bottom-4 right-4 no-underline"
     >
       {children}
     </a>

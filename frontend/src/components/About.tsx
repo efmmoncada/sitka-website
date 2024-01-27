@@ -12,9 +12,9 @@ export default function About({
   aboutImage,
 }: Props) {
   return (
-    <div className="pt-16 pb-4 grid place-items-center bg-white">
+    <div className="grid place-items-center bg-white pb-4 pt-16">
       <SectionTitle>About Us</SectionTitle>
-      <div className="flex relative flex-col md:flex-row gap-20 p-4 lg:p-10 xl:p-12 2xl:px-16 font-serif">
+      <div className="relative flex flex-col gap-20 p-4 font-serif md:flex-row lg:p-10 xl:p-12 2xl:px-16">
         <Image
           src={(aboutImage as Media).url || ""}
           width={(aboutImage as Media).width || 0}

@@ -6,7 +6,7 @@ type Props = Pick<Service, "name" | "description" | "icon">;
 
 export default function ServiceBullet({ name, description, icon }: Props) {
   return (
-    <div className="flex font-serif px-4 w-fit">
+    <div className="flex w-fit px-4 font-serif">
       <Image
         src={(icon as Media).url || ""}
         alt="icon"

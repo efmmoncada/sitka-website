@@ -9,10 +9,10 @@ type Props = {
 export default function OurServices({ services }: Props) {
   if (!services.length) return null;
   return (
-    <div className="bg-white py-10 flex flex-col items-center">
+    <div className="flex flex-col items-center bg-white py-10">
       <SectionTitle>Our Services</SectionTitle>
 
-      <div className="py-10 grid grid-cols-1 lg:grid-cols-2 xl:gap-x-36 gap-y-14 w-fit">
+      <div className="grid w-fit grid-cols-1 gap-y-14 py-10 lg:grid-cols-2 xl:gap-x-36">
         {services.map((service) => (
           <ServiceBullet
             key={service.id}

@@ -9,7 +9,7 @@ function formatPhoneNumber(phoneNum: string): string {
   if (actualPhone)
     formattedPhoneNum += `(${actualPhone.slice(0, 3)}) ${actualPhone.slice(
       3,
-      6
+      6,
     )}-${actualPhone.slice(6)}`;
 
   return formattedPhoneNum;

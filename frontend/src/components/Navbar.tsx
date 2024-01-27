@@ -50,12 +50,12 @@ export default function Nav({ businessName }: Props) {
       </NavbarContent>
       <NavbarContent justify="end" className="hidden sm:flex">
         <NavbarItem>
-          <Link className="text-black text-xl" href="/showcase">
+          <Link className="text-xl text-black" href="/showcase">
             Showcase
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link className="text-black text-xl" href="/#contact">
+          <Link className="text-xl text-black" href="/#contact">
             Contact Us
           </Link>
         </NavbarItem>
@@ -68,7 +68,7 @@ export default function Nav({ businessName }: Props) {
       <NavbarMenu>
         {MenuItems.map(({ title, href }, i) => (
           <NavbarMenuItem key={i}>
-            <Link className="text-black text-lg" href={href}>
+            <Link className="text-lg text-black" href={href}>
               {title}
             </Link>
           </NavbarMenuItem>

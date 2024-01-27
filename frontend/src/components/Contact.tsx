@@ -44,7 +44,7 @@ export default function Contact() {
         process.env.NEXT_PUBLIC_SERVICE_ID,
         process.env.NEXT_PUBLIC_TEMPLATE_ID,
         form.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
       );
       console.log("Email sent successfully!", res.status, res.text);
       form.current.reset();

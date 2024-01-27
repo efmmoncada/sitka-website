@@ -44,7 +44,7 @@ export default function ImageCarousel({ images }: Props) {
                   className="rounded-md shadow-2xl"
                 />
               </SwiperSlide>
-            ) : null
+            ) : null,
           )
           .filter((v) => v !== null)}
       </Swiper>

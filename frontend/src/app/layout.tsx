@@ -21,7 +21,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const businessInfo = await fetchFromPayload<BusinessInfo>(
-    "/api/globals/business_info"
+    "/api/globals/business_info",
   );
 
   const { businessName } = businessInfo;
