@@ -1,8 +1,8 @@
-import { FaSquareFacebook } from "react-icons/fa6";
 import { BusinessInfo, Media } from "@payload-types/payload-types";
+import Image from "next/image";
+import { FaSquareFacebook } from "react-icons/fa6";
 import SectionTitle from "./SectionTitle";
 import SocialIcon from "./SocialIcon";
-import Image from "next/image";
 
 type Props = Pick<BusinessInfo, "facebookUrl" | "aboutContent" | "aboutImage">;
 

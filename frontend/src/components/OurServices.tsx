@@ -1,4 +1,4 @@
-import { Media, Service } from "@payload-types/payload-types";
+import { Service } from "@payload-types/payload-types";
 import SectionTitle from "./SectionTitle";
 import ServiceBullet from "./ServiceBullet";
 

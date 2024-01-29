@@ -1,6 +1,6 @@
 import ShowcaseBlock from "@/components/ShowcaseBlock";
-import { Media, PreviousWork } from "@payload-types/payload-types";
 import fetchFromPayload from "@/utils/fetchFromPayload";
+import { Media, PreviousWork } from "@payload-types/payload-types";
 
 export default async function Showcase() {
   const previousWorks = await fetchFromPayload<{ docs: PreviousWork[] }>(

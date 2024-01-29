@@ -1,7 +1,4 @@
 "use client";
-import Image from "next/image";
-import { useState } from "react";
-import { BusinessInfo } from "@payload-types/payload-types";
 import {
   Link,
   Navbar,
@@ -12,6 +9,9 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
 } from "@nextui-org/react";
+import { BusinessInfo } from "@payload-types/payload-types";
+import Image from "next/image";
+import { useState } from "react";
 import logo from "../../public/logo.png";
 
 type Props = Pick<BusinessInfo, "businessName">;

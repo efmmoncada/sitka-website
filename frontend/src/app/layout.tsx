@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
 import Footer from "@/components/Footer";
-import dynamic from "next/dynamic";
 import fetchFromPayload from "@/utils/fetchFromPayload";
 import { BusinessInfo } from "@payload-types/payload-types";
+import type { Metadata } from "next";
+import dynamic from "next/dynamic";
+import { Inter } from "next/font/google";
+import "./globals.css";
 import { Providers } from "./providers";
 const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: false });
 

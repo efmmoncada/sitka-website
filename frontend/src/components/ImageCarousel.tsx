@@ -1,14 +1,15 @@
 "use client";
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import useScreeSize from "@/hooks/useScreenSize";
+import { Media } from "@payload-types/payload-types";
 
 import "swiper/css";
+import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/effect-coverflow";
-import { Media } from "@payload-types/payload-types";
-import useScreeSize from "@/hooks/useScreenSize";
 
 type Props = { images?: Media[] };
 

@@ -2,10 +2,10 @@
 
 import { FormEvent, MouseEvent, useMemo, useRef, useState } from "react";
 
-import SectionTitle from "./SectionTitle";
 import emailjs from "@emailjs/browser";
-import { FaCircleCheck } from "react-icons/fa6";
 import { Button, Input, Textarea, Tooltip } from "@nextui-org/react";
+import { FaCircleCheck } from "react-icons/fa6";
+import SectionTitle from "./SectionTitle";
 
 export default function Contact() {
   const form = useRef<HTMLFormElement>(document.createElement("form"));

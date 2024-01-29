@@ -1,10 +1,10 @@
+import About from "@/components/About";
 import Banner from "@/components/Banner";
 import InfoBar from "@/components/InfoBar";
-import { BusinessInfo, Service } from "@payload-types/payload-types";
 import OurServices from "@/components/OurServices";
-import About from "@/components/About";
-import dynamic from "next/dynamic";
 import fetchFromPayload from "@/utils/fetchFromPayload";
+import { BusinessInfo, Service } from "@payload-types/payload-types";
+import dynamic from "next/dynamic";
 const Contact = dynamic(() => import("@/components/Contact"), { ssr: false });
 
 export default async function Home() {
