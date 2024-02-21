@@ -13,3 +13,9 @@
     font-family: "Noto Serif Display", serif;
   }
 }
+
+[data-overlay-container="true"] {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}

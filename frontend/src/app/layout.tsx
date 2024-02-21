@@ -44,7 +44,7 @@ export default async function RootLayout({
       <body>
         <Providers>
           <Navbar businessName={businessName} />
-          {children}
+          <div className='flex-grow'>{children}</div>
           <Footer businessName={businessName} />
         </Providers>
       </body>
