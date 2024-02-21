@@ -1,11 +1,14 @@
 import Footer from "@/components/Footer";
 import fetchFromPayload from "@/utils/fetchFromPayload";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
 import { BusinessInfo } from "@payload-types/payload-types";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
+
 const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: false });
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,6 +23,9 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // @ts-ignore
+  library.add(fas);
+
   const businessInfo = await fetchFromPayload<BusinessInfo>(
     "/api/globals/business_info",
   );
@@ -44,7 +50,7 @@ export default async function RootLayout({
       <body>
         <Providers>
           <Navbar businessName={businessName} />
-          <div className='flex-grow'>{children}</div>
+          <div className="flex-grow">{children}</div>
           <Footer businessName={businessName} />
         </Providers>
       </body>

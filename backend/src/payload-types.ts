@@ -36,7 +36,18 @@ export interface Service {
   id: string;
   name: string;
   description: string;
-  icon: string | Media;
+  icon?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+export interface PreviousWork {
+  id: string;
+  service: string;
+  media: {
+    image: string | Media;
+    id?: string | null;
+  }[];
+  primaryImage: string | Media;
   updatedAt: string;
   createdAt: string;
 }
@@ -50,17 +61,6 @@ export interface Media {
   filesize?: number | null;
   width?: number | null;
   height?: number | null;
-}
-export interface PreviousWork {
-  id: string;
-  service: string;
-  media: {
-    image: string | Media;
-    id?: string | null;
-  }[];
-  primaryImage: string | Media;
-  updatedAt: string;
-  createdAt: string;
 }
 export interface PayloadPreference {
   id: string;

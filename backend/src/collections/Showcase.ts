@@ -3,7 +3,9 @@ import anyone from "../utilities/access/anyone";
 
 const Showcase: CollectionConfig = {
   slug: "previousWorks",
-  admin: {},
+  admin: {
+    useAsTitle: "service",
+  },
   access: {
     read: anyone,
   },

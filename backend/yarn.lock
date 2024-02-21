@@ -1246,6 +1246,13 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
+"@innovixx/payload-icon-picker-field@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@innovixx/payload-icon-picker-field/-/payload-icon-picker-field-0.0.4.tgz#4f01328d0ac1b6639cc8816f4fc71e95cd40b4d8"
+  integrity sha512-kQHqwdAOxsXSBHnGY1RQ/SJAE1N3ksDlyEXOHfdcI+QMqR/3ldA/XR/azah08RIg9MbML8q90neilASWgbv+Lw==
+  dependencies:
+    deepmerge "^4.3.1"
+
 "@jest/schemas@^29.6.3":
   version "29.6.3"
   resolved "https://registry.yarnpkg.com/@jest/schemas/-/schemas-29.6.3.tgz#430b5ce8a4e0044a7e3819663305a7b3091c8e03"
@@ -3505,7 +3512,7 @@ deep-extend@^0.6.0:
   resolved "https://registry.yarnpkg.com/deep-extend/-/deep-extend-0.6.0.tgz#c4fa7c95404a17a9c3e8ca7e1537312b736330ac"
   integrity sha512-LOHxIOaPYdHlJRtCQfDIVZtfw/ufM8+rVj649RIHzcm/vGwQRXFt6OPqIFWsm2XEMrNIEtWR64sY1LEKD2vAOA==
 
-deepmerge@4.3.1, deepmerge@^4.0.0, deepmerge@^4.2.2:
+deepmerge@4.3.1, deepmerge@^4.0.0, deepmerge@^4.2.2, deepmerge@^4.3.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-4.3.1.tgz#44b5f2147cd3b00d4b56137685966f26fd25dd4a"
   integrity sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==
@@ -7030,6 +7037,11 @@ react-i18next@11.18.6:
   dependencies:
     "@babel/runtime" "^7.14.5"
     html-parse-stringify "^3.0.1"
+
+react-icons@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-5.0.1.tgz#1694e11bfa2a2888cab47dcc30154ce90485feee"
+  integrity sha512-WqLZJ4bLzlhmsvme6iFdgO8gfZP17rfjYEJ2m9RsZjZ+cc4k1hTzknEz63YS1MeT50kVzoa1Nz36f4BEx+Wigw==
 
 react-image-crop@10.1.8:
   version "10.1.8"
