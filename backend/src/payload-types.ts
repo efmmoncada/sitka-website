@@ -58,6 +58,7 @@ export interface PreviousWork {
     image: string | Media;
     id?: string | null;
   }[];
+  primaryImage: string | Media;
   updatedAt: string;
   createdAt: string;
 }

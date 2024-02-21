@@ -1,22 +1,15 @@
-import ShowcaseBlock from "@/components/ShowcaseBlock";
+import { ProjectGrid } from "@/components/ProjectGrid";
 import fetchFromPayload from "@/utils/fetchFromPayload";
-import { Media, PreviousWork } from "@payload-types/payload-types";
+import { PreviousWork } from "@payload-types/payload-types";
 
 export default async function Showcase() {
   const previousWorks = await fetchFromPayload<{ docs: PreviousWork[] }>(
     "/api/previousWorks",
   );
 
-  return (
-    <>
-      <h2 className="pt-14 text-center text-4xl font-bold">Previous Work</h2>
+  if (!(previousWorks && previousWorks.docs && previousWorks.docs.length > 0)) {
+    return null;
+  }
 
-      {previousWorks.docs.map((project) => (
-        <ShowcaseBlock
-          key={project.id}
-          images={project.media?.map((i) => i.image as Media)}
-        />
-      ))}
-    </>
-  );
+  return <ProjectGrid projects={previousWorks.docs} />;
 }

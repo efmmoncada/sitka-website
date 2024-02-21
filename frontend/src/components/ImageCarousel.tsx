@@ -3,7 +3,6 @@ import Image from "next/image";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import useScreeSize from "@/hooks/useScreenSize";
 import { Media } from "@payload-types/payload-types";
 
 import "swiper/css";
@@ -14,7 +13,6 @@ import "swiper/css/pagination";
 type Props = { images?: Media[] };
 
 export default function ImageCarousel({ images }: Props) {
-  const { width } = useScreeSize();
   if (!images) return null;
   return (
     <>
@@ -26,8 +24,6 @@ export default function ImageCarousel({ images }: Props) {
         `}
       </style>
       <Swiper
-        slidesPerView={width > 680 ? 3 : 1}
-        spaceBetween={20}
         modules={[Pagination, Navigation]}
         navigation={true}
         pagination={{ clickable: true }}
@@ -35,14 +31,18 @@ export default function ImageCarousel({ images }: Props) {
         {images
           .filter((img) => img.url)
           .map((img, i) =>
-            img.width ? (
+            img.width && img.height ? (
               <SwiperSlide key={i}>
                 <Image
                   src={img.url || ""}
-                  width={Math.min(img.width, 300)}
-                  height={img.height || 0}
+                  objectFit="contain"
+                  width={img.width}
+                  height={img.height}
                   alt=""
-                  className="rounded-md shadow-2xl"
+                  objectPosition="center"
+                  className="mx-auto"
+                  style={{ width: "auto", height: "100%" }}
+                  sizes="100vw"
                 />
               </SwiperSlide>
             ) : null,

@@ -29,6 +29,13 @@ const Showcase: CollectionConfig = {
       ],
       required: true,
     },
+    {
+      name: "primaryImage",
+      label: "Primary Image",
+      type: "upload",
+      relationTo: "media",
+      required: true,
+    },
   ],
 };
 

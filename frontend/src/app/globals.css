@@ -14,6 +14,11 @@
   }
 }
 
+.swiper {
+  width: 100%;
+  height: 70vh;
+}
+
 [data-overlay-container="true"] {
   display: flex;
   min-height: 100vh;
