@@ -35,14 +35,11 @@ export default function ImageCarousel({ images }: Props) {
               <SwiperSlide key={i}>
                 <Image
                   src={img.url || ""}
-                  objectFit="contain"
                   width={img.width}
                   height={img.height}
                   alt=""
-                  objectPosition="center"
-                  className="mx-auto"
+                  className="mx-auto object-contain"
                   style={{ width: "auto", height: "100%" }}
-                  sizes="100vw"
                 />
               </SwiperSlide>
             ) : null,

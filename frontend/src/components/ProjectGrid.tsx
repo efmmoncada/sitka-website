@@ -32,7 +32,7 @@ export function ProjectGrid({ projects }: Props) {
     <>
       <h2 className="pt-14 text-center text-4xl font-bold">Previous Work</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-20 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-8 md:p-14 lg:p-20 gap-8 lg:gap-10">
         {projects.map((project, i) => (
           <>
             <ShowcaseCard
