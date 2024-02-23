@@ -55,7 +55,7 @@ export default function Contact() {
   }
 
   return (
-    <div id="contact" className="scroll-mt-28">
+    <div id="contact" className="scroll-mt-28 py-10 px-4 sm:px-0">
       <SectionTitle>Contact Us</SectionTitle>
       {submitted ? (
         <EmailSendSuccess />

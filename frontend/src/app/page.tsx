@@ -1,8 +1,8 @@
-import About from "@/components/About";
 import Banner from "@/components/Banner";
 import InfoBar from "@/components/InfoBar";
 import OurServices from "@/components/OurServices";
 import fetchFromPayload from "@/utils/fetchFromPayload";
+import { Divider } from '@nextui-org/react';
 import { BusinessInfo, Service } from "@payload-types/payload-types";
 import dynamic from "next/dynamic";
 const Contact = dynamic(() => import("@/components/Contact"), { ssr: false });
@@ -33,12 +33,14 @@ export default async function Home() {
         licenseNumber={licenseNumber}
       />
       <OurServices services={services.docs} />
+      <Divider />
       <Contact />
-      <About
+      {/* // TODO: unhide this once the about data is recv'd */ }
+      {/* <About
         aboutContent={aboutContent}
         aboutImage={aboutImage}
         facebookUrl={facebookUrl}
-      />
+      /> */}
     </>
   );
 }
