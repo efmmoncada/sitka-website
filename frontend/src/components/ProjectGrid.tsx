@@ -21,7 +21,7 @@ type Props = {
 export function ProjectGrid({ projects }: Props) {
   const [selectedProjIndex, setSelectedProjIndex] = useState<number>(0);
 
-  const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const handleOpen = (i: number) => () => {
     setSelectedProjIndex(i);
@@ -32,7 +32,7 @@ export function ProjectGrid({ projects }: Props) {
     <>
       <h2 className="pt-14 text-center text-4xl font-bold">Previous Work</h2>
 
-      <div className="flex items-center justify-center p-20 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-20 gap-10">
         {projects.map((project, i) => (
           <>
             <ShowcaseCard

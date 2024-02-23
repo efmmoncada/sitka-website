@@ -11,12 +11,10 @@ type Props = {
 
 export function ShowcaseCard({onOpen, backgroundUrl, title}: Props) {
   return (
-    <Card isPressable onPress={onOpen} className="hover:scale-105 max-h-[200px]" radius="md">
+    <Card isPressable onPress={onOpen} className="hover:scale-105 aspect-video overflow-hidden" radius="md">
       <Image
-        width={400}
-        height={200}
-        objectFit='cover'
-        className="object-cover overflow-hidden"
+        fill
+        className="overflow-hidden object-cover object-center"
         alt="renovation image"
         src={backgroundUrl}
       />
