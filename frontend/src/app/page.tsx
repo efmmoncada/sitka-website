@@ -23,8 +23,6 @@ export default async function Home() {
   } = businessInfo;
 
   const services = await fetchFromPayload<{ docs: Service[] }>("/api/services");
-  console.log(services);
-
 
   return (
     <>
