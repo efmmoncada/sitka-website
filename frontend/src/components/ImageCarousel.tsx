@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -9,6 +8,7 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { ImageWithSpinner } from "./ImageWithSpinner";
 
 type Props = { images?: Media[] };
 
@@ -33,11 +33,12 @@ export default function ImageCarousel({ images }: Props) {
           .map((img, i) =>
             img.width && img.height ? (
               <SwiperSlide key={i}>
-                <Image
+                <ImageWithSpinner
                   src={img.url || ""}
                   width={img.width}
                   height={img.height}
                   alt=""
+                  key={img.url}
                   className="mx-auto object-contain"
                   style={{ width: "auto", height: "100%" }}
                 />
