@@ -11,9 +11,15 @@ type Props = {
 
 export function ShowcaseCard({onOpen, backgroundUrl, title}: Props) {
   return (
-    <Card isPressable onPress={onOpen} className="hover:scale-105 aspect-video overflow-hidden" radius="md">
+    <Card
+      isPressable
+      onPress={onOpen}
+      className="aspect-video overflow-hidden hover:scale-105"
+      radius="md"
+    >
       <Image
         fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         className="overflow-hidden object-cover object-center"
         alt="renovation image"
         src={backgroundUrl}

@@ -37,6 +37,7 @@ export default function ImageCarousel({ images }: Props) {
                   src={img.url || ""}
                   width={img.width}
                   height={img.height}
+                  loading='eager'
                   alt=""
                   key={img.url}
                   className="mx-auto object-contain"
