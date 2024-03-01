@@ -40,6 +40,12 @@ export default function Contact() {
       )
         throw new Error("emailjs env vars not defined");
 
+      const info = new FormData(form.current).entries();
+      console.log(
+        new Date().toLocaleString("en-US", { timeZone: "America/Los_Angeles" }),
+      );
+      console.log("Info collected:", ...info);
+
       const res = await emailjs.sendForm(
         process.env.NEXT_PUBLIC_SERVICE_ID,
         process.env.NEXT_PUBLIC_TEMPLATE_ID,
@@ -55,7 +61,7 @@ export default function Contact() {
   }
 
   return (
-    <div id="contact" className="scroll-mt-28 py-10 px-4 sm:px-0">
+    <div id="contact" className="scroll-mt-28 px-4 py-10 sm:px-0">
       <SectionTitle>Contact Us</SectionTitle>
       {submitted ? (
         <EmailSendSuccess />
@@ -66,6 +72,7 @@ export default function Contact() {
           className="flex flex-col items-center gap-4"
         >
           <Input
+            name="name"
             type="text"
             label="Your Name"
             variant="bordered"
@@ -77,6 +84,7 @@ export default function Contact() {
             className="max-w-sm"
           />
           <Input
+            name="email"
             type="email"
             label="Your Email"
             autoComplete="email"
@@ -90,6 +98,7 @@ export default function Contact() {
             className="max-w-sm"
           />
           <Input
+            name="phoneNumber"
             type="tel"
             autoComplete="tel"
             variant="bordered"
@@ -97,6 +106,7 @@ export default function Contact() {
             className="max-w-sm"
           />
           <Textarea
+            name="description"
             variant="bordered"
             label="Description of the work you are interested in having done"
             rows={8}
